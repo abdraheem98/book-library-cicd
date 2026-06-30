@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      java: corretto17
+  pre_build:
+    commands:
+      - echo "Starting the build"
+      - mvn --version
+  build:
+    commands:
+      - echo "Buidling the application"
+      - mvn clean package
+  postbuild:
+    commands:
+      - echo "Build completed"
+  artifacts:
+    files:
+      - target/*.jar
